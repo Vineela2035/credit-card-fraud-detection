@@ -36,9 +36,7 @@ This creates a challenge where models may predict all transactions as normal.
   - `1` → Fraud
 
 ---
-
 ## 🔄 Project Flowchart
-
 ```mermaid
 flowchart TD
     A[Start] --> B[Load Dataset]
