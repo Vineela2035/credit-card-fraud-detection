@@ -37,17 +37,71 @@ This creates a challenge where models may predict all transactions as normal.
 
 ---
 flowchart TD
-    A[Start] --> B[Load Dataset]
-    B --> C[Data Preprocessing]
-    C --> D[Exploratory Data Analysis]
-    D --> E[Handle Imbalanced Data with SMOTE]
-    E --> F[Train Machine Learning Models]
-    F --> G[Evaluate Model Performance]
-    G --> H{Performance Satisfactory?}
-    H -->|Yes| I[Save Model]
-    H -->|No| F
-    I --> J[Deploy Model]
-    J --> K[End]
+
+%% =====================
+%% START
+%% =====================
+A([Start]) --> B[Load Credit Card Dataset]
+
+%% =====================
+%% DATA PROCESSING
+%% =====================
+B --> C[Data Preprocessing]
+C --> C1[Handle Missing Values]
+C --> C2[Feature Scaling]
+C --> C3[Split Features & Target]
+
+%% =====================
+%% EDA
+%% =====================
+C3 --> D[Exploratory Data Analysis]
+D --> D1[Analyze Fraud vs Normal Distribution]
+D --> D2[Visualize Patterns]
+
+%% =====================
+%% IMBALANCE HANDLING
+%% =====================
+D2 --> E[Handle Imbalanced Data]
+E --> E1[Apply SMOTE Oversampling]
+
+%% =====================
+%% MODEL TRAINING
+%% =====================
+E1 --> F[Train Machine Learning Models]
+F --> F1[Logistic Regression]
+F --> F2[Random Forest]
+F --> F3[XGBoost]
+
+%% =====================
+%% EVALUATION
+%% =====================
+F1 --> G[Evaluate Models]
+F2 --> G
+F3 --> G
+
+G --> G1[Precision]
+G --> G2[Recall]
+G --> G3[F1 Score]
+G --> G4[Confusion Matrix]
+
+%% =====================
+%% DECISION
+%% =====================
+G4 --> H{Model Performance Good?}
+
+H -->|No| F
+H -->|Yes| I[Select Best Model]
+
+%% =====================
+%% DEPLOYMENT
+%% =====================
+I --> J[Save Trained Model]
+J --> K[Deploy for Real-Time Prediction]
+
+%% =====================
+%% END
+%% =====================
+K --> L([End])
 ---
 
 ## ⚙️ Workflow Explanation
