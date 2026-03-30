@@ -36,13 +36,11 @@ This creates a challenge where models may predict all transactions as normal.
   - `1` → Fraud
 
 ---
-## 🔄 Project Flowchart
-```mermaid
 flowchart TD
     A[Start] --> B[Load Dataset]
     B --> C[Data Preprocessing]
     C --> D[Exploratory Data Analysis]
-    D --> E[Handle Imbalanced Data (SMOTE)]
+    D --> E[Handle Imbalanced Data with SMOTE]
     E --> F[Train Machine Learning Models]
     F --> G[Evaluate Model Performance]
     G --> H{Performance Satisfactory?}
@@ -50,8 +48,6 @@ flowchart TD
     H -->|No| F
     I --> J[Deploy Model]
     J --> K[End]
-```
-
 ---
 
 ## ⚙️ Workflow Explanation
