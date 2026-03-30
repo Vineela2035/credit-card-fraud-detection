@@ -2,6 +2,7 @@
 
 > A machine learning project to identify fraudulent credit card transactions with high accuracy
 
+---
 
 ## 📌 Project Overview
 
@@ -36,72 +37,50 @@ This creates a challenge where models may predict all transactions as normal.
   - `1` → Fraud
 
 ---
+
+## 🔄 Project Flowchart
+
+```mermaid
 flowchart TD
 
-%% =====================
-%% START
-%% =====================
-A([Start]) --> B[Load Credit Card Dataset]
+    A([Start]) --> B[Load Credit Card Dataset]
 
-%% =====================
-%% DATA PROCESSING
-%% =====================
-B --> C[Data Preprocessing]
-C --> C1[Handle Missing Values]
-C --> C2[Feature Scaling]
-C --> C3[Split Features & Target]
+    B --> C[Data Preprocessing]
+    C --> C1[Handle Missing Values]
+    C --> C2[Feature Scaling]
+    C --> C3[Split Features and Target]
 
-%% =====================
-%% EDA
-%% =====================
-C3 --> D[Exploratory Data Analysis]
-D --> D1[Analyze Fraud vs Normal Distribution]
-D --> D2[Visualize Patterns]
+    C3 --> D[Exploratory Data Analysis]
+    D --> D1[Analyze Fraud vs Normal Distribution]
+    D --> D2[Visualize Patterns]
 
-%% =====================
-%% IMBALANCE HANDLING
-%% =====================
-D2 --> E[Handle Imbalanced Data]
-E --> E1[Apply SMOTE Oversampling]
+    D2 --> E[Handle Imbalanced Data]
+    E --> E1[Apply SMOTE Oversampling]
 
-%% =====================
-%% MODEL TRAINING
-%% =====================
-E1 --> F[Train Machine Learning Models]
-F --> F1[Logistic Regression]
-F --> F2[Random Forest]
-F --> F3[XGBoost]
+    E1 --> F[Train Machine Learning Models]
+    F --> F1[Logistic Regression]
+    F --> F2[Random Forest]
+    F --> F3[XGBoost]
 
-%% =====================
-%% EVALUATION
-%% =====================
-F1 --> G[Evaluate Models]
-F2 --> G
-F3 --> G
+    F1 --> G[Evaluate Models]
+    F2 --> G
+    F3 --> G
 
-G --> G1[Precision]
-G --> G2[Recall]
-G --> G3[F1 Score]
-G --> G4[Confusion Matrix]
+    G --> G1[Precision]
+    G --> G2[Recall]
+    G --> G3[F1 Score]
+    G --> G4[Confusion Matrix]
 
-%% =====================
-%% DECISION
-%% =====================
-G4 --> H{Model Performance Good?}
+    G4 --> H{Model Performance Good?}
 
-H -->|No| F
-H -->|Yes| I[Select Best Model]
+    H -->|No| F
+    H -->|Yes| I[Select Best Model]
 
-%% =====================
-%% DEPLOYMENT
-%% =====================
-I --> J[Save Trained Model]
-J --> K[Deploy for Real-Time Prediction]
+    I --> J[Save Trained Model]
+    J --> K[Deploy for Real-Time Prediction]
+    K --> L([End])
+```
 
-%% =====================
-%% END
-%% =====================
-K --> L([End])
 ---
 
 ## ⚙️ Workflow Explanation
@@ -116,7 +95,7 @@ K --> L([End])
 - Identify patterns in transactions
 
 ### 3. Handling Imbalanced Data
-- SMOTE (oversampling)
+- SMOTE oversampling
 - Ensures balanced training dataset
 
 ### 4. Model Training
@@ -255,3 +234,8 @@ jupyter notebook
 **Mallu Vineela Reddy**  
 Data Science Enthusiast
 
+---
+
+## ⭐ Acknowledgment
+
+If you found this project useful, consider giving it a ⭐ on GitHub!
